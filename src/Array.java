@@ -3,27 +3,36 @@ class Stack{
     int st[] = new int[5];
     int idx = 0;
     void push(int x){
-        st[idx] = x;
-        idx++;
-    }
-    void pop(){
-        System.out.println(st[idx-1]);
-        idx--;
+       st[idx] = x;
+       idx++;
     }
     void display(){
         for (int i = 0; i < st.length; i++) {
-            System.out.println(st[i]);
+            System.out.print(st[i]+" ");
         }
     }
     void peek(){
-        if(idx >= 0) {
-            System.out.println(st[idx - 1]);
+        System.out.println(st[idx-1]);
+    }
+    void pop(){
+        if(idx == -1){
+            System.out.println("underflow");
         }
-        else{
-            System.out.println(st[0]);
+        else {
+            System.out.println(st[idx-1]);
+            idx--;
         }
     }
-
+    void empty(){
+        if(idx == 0){
+            System.out.println("empty");
+        }
+    }
+    void full(){
+       if(st.length>=idx){
+           System.out.println("full");
+       }
+    }
 }
 
 public class Array {
@@ -34,10 +43,16 @@ public class Array {
         s.push(30);
         s.push(40);
         s.push(50);
-
         s.display();
-        s.pop();
-        s.pop();
+        System.out.println();
+s.pop();
+s.pop();
+s.pop();
+s.pop();
+s.pop();
+
+s.empty();
+
 
     }
 }
